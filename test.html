@@ -43,7 +43,8 @@
 var constraints = { audio: true, video: { width: 1280, height: 720 } };
 
 navigator.mediaDevices.getUserMedia(constraints)
-.then(function(mediaStream) {
+/*
+.then(() => {
   alert("success");
   /*
   var video = document.querySelector('video');
@@ -52,7 +53,7 @@ navigator.mediaDevices.getUserMedia(constraints)
     // video.play();
   };
   */
-})
+// })
 .catch(function(err) { alert("error"); console.log(err.name + ": " + err.message); }); // always check 
 /*
     navigator.mediaDevices.enumerateDevices().then(() => {
