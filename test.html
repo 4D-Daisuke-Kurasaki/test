@@ -42,7 +42,7 @@
 */
 var constraints = { audio: true, video: { width: 1280, height: 720 } };
 
-
+/*
 navigator.mediaDevices.getUserMedia(constraints)
 .then((stream) => {
   alert("success");
@@ -54,6 +54,7 @@ navigator.mediaDevices.getUserMedia(constraints)
   };
 })
 .catch(function(err) { alert("error"); console.log(err.name + ": " + err.message); }); // always check
+*/
 
 /*
     navigator.mediaDevices.enumerateDevices().then(() => {
@@ -82,6 +83,17 @@ navigator.mediaDevices.getUserMedia(constraints)
     document.getElementById("test").addEventListener("click", (value) => {
       // document.getElementById("bk").style.display = "block";
       // alert("ここここ");
+      navigator.mediaDevices.getUserMedia(constraints)
+.then((stream) => {
+  alert("success");
+  stream.getTracks().forEach(track => track.stop());
+  var video = document.querySelector('video');
+  video.srcObject = mediaStream;
+  video.onloadedmetadata = function(e) {
+    // video.play();
+  };
+})
+.catch(function(err) { alert("error"); console.log(err.name + ": " + err.message); }); // always check
     });
     document.getElementById("bk").addEventListener("click", (value) => {
       // document.getElementById("bk").style.display = "none";
