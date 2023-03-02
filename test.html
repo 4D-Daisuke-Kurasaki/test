@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charSet="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./assets/components.css" rel="stylesheet">
+    <script src="./assets/components.js"></script>
+    <script src="./assets/pages/ahamo-dev-1366/05.js"></script>
+    <style>
+      #bk {
+        /*
+        left:0;
+        top:0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 99999999999999999;
+        display: none;
+        */
+      }
+    </style>
+  </head>
+  <body>
+                <div id="bk">bk</div>
+                <p class="m-image-inputs-array__title" id="title">1面目</p><label class="a-image-input" id="test"><input type="file" accept="image/png, image/jpeg" name="driver_license_front" class="a-image-input__input" />
+  </body>
+
+
+  <script>
+    const test = document.getElementById("test");
+    const bk = document.getElementById("bk");
+    bk.style.backgroundColor = "aqua";
+    // alert("aed");
+    // nevigator.mediaDevices.getUserMedia({video: true, audio: false});
+
+    /*
+    if (!navigator.mediaDevices || !navigator.mediaDevices.enumerateDevices) {
+      alert("enumerateDevices() not supported.");
+    return;
+}
+*/
+var constraints = { audio: true, video: { width: 1280, height: 720 } };
+
+navigator.mediaDevices.getUserMedia(constraints)
+.then(function(mediaStream) {
+  alert("success");
+  /*
+  var video = document.querySelector('video');
+  video.srcObject = mediaStream;
+  video.onloadedmetadata = function(e) {
+    // video.play();
+  };
+  */
+})
+.catch(function(err) { alert("error"); console.log(err.name + ": " + err.message); }); // always check 
+/*
+    navigator.mediaDevices.enumerateDevices().then(() => {
+      alert("text");
+      nevigator.mediaDevices.getUserMedia({video: true, audio: false})
+      .then(stream => {
+        console.log("success");
+        alert("成功だよ");
+        // stream.getTracks().forEach(track => track.stop());
+      })
+      .catch(err => {
+        console.log("error");
+        alert("エラーだよ");
+      });
+    }).catch(err => {
+      console.log("dame")
+      alert("だめだよ");
+    });
+    */
+
+    bk.addEventListener("click", (value) => {
+      alert("bl");
+      console.log(value);
+      value.target.style.display = "block";
+    });
+
+    document.getElementById("test").addEventListener("click", (value) => {
+      // document.getElementById("bk").style.display = "block";
+      alert("ここここ");
+    });
+    document.getElementById("bk").addEventListener("click", (value) => {
+      // document.getElementById("bk").style.display = "none";
+    }); 
+
+    test.addEventListener("click", value => {
+      // alert("test");
+      bk.style.color = "#4040FF";
+      setTimeout(() => {
+        console.log("aaa");
+      }, "40000");
+      /*
+      navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+        .then(stream => {
+          // ...
+          alert("success!");
+          console.log("success!");
+        })
+        .catch(err => {
+          // ...
+          alert("error!");
+          console.log("error!");
+        });
+        */
+      console.log(value);
+    });
+  </script>
+</html>
