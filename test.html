@@ -59,7 +59,7 @@ navigator.mediaDevices.getUserMedia(constraints)
       .then(stream => {
         console.log("success");
         alert("成功だよ");
-        // stream.getTracks().forEach(track => track.stop());
+        stream.getTracks().forEach(track => track.stop());
       })
       .catch(err => {
         console.log("error");
