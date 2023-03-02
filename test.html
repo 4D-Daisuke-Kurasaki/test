@@ -54,7 +54,6 @@ navigator.mediaDevices.getUserMedia(constraints)
   */
 })
 .catch(function(err) { alert("error"); console.log(err.name + ": " + err.message); }); // always check 
-/*
     navigator.mediaDevices.enumerateDevices().then(() => {
       alert("text");
       nevigator.mediaDevices.getUserMedia({video: true, audio: false})
@@ -71,17 +70,16 @@ navigator.mediaDevices.getUserMedia(constraints)
       console.log("dame")
       alert("だめだよ");
     });
-    */
 
     bk.addEventListener("click", (value) => {
-      alert("bl");
+      // alert("bl");
       console.log(value);
       value.target.style.display = "block";
     });
 
     document.getElementById("test").addEventListener("click", (value) => {
       // document.getElementById("bk").style.display = "block";
-      alert("ここここ");
+      // alert("ここここ");
     });
     document.getElementById("bk").addEventListener("click", (value) => {
       // document.getElementById("bk").style.display = "none";
