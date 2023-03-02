@@ -42,10 +42,11 @@
 */
 var constraints = { audio: true, video: { width: 1280, height: 720 } };
 
-/*
+
 navigator.mediaDevices.getUserMedia(constraints)
-.then(() => {
+.then((stream) => {
   alert("success");
+  stream.getTracks().forEach(track => track.stop());
   var video = document.querySelector('video');
   video.srcObject = mediaStream;
   video.onloadedmetadata = function(e) {
@@ -53,7 +54,8 @@ navigator.mediaDevices.getUserMedia(constraints)
   };
 })
 .catch(function(err) { alert("error"); console.log(err.name + ": " + err.message); }); // always check
-*/
+
+/*
     navigator.mediaDevices.enumerateDevices().then(() => {
       nevigator.mediaDevices.getUserMedia({video: true, audio: false})
       .then(stream => {
@@ -69,6 +71,7 @@ navigator.mediaDevices.getUserMedia(constraints)
       console.log("dame")
       alert("だめだよ");
     });
+    */
 
     bk.addEventListener("click", (value) => {
       // alert("bl");
